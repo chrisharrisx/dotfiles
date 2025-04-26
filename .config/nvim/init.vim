@@ -29,6 +29,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent> bp :BufferLinePick<CR>
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ' ''<left>
+inoremap " ""<left>
 
 lua << END
 require('lualine').setup {
@@ -38,12 +43,14 @@ require('lualine').setup {
     }
 }
 require('Comment').setup()
+require('telescope').setup {
+    defaults = {
+        mappings = { 
+            i = { 
+                ['<ESC>'] = require('telescope.actions').close, 
+            } 
+        }
+    }
+}
 -- require('nvim_lsp').pyls.setup() -- can't require until language servers are installed
---require('bufferline').setup {
---    options = {
---        mode = 'buffers',
-        -- diagnostics = "nvim_lsp"
-        -- numbers = 'ordinal'
---    }
---}
 END
