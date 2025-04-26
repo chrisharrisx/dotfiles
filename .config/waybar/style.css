@@ -1,0 +1,171 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    /*font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;*/
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'OverPassM Nerd Font Mono';
+}
+
+window#waybar {
+    background-color: transparent;
+    border-bottom: none;
+    color: #99d1db;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    padding: 1px;
+    color: #555555;
+    font-size: 120%;
+    background: none;
+    border: none;
+    text-shadow: none;
+    transition: none;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    color: #f4b8e4;
+    color: #85c1dc;
+    color: white;
+}
+
+#workspaces button:hover {    
+    background: none;
+    border: none;
+    border-color: transparent;
+    text-shadow: none;
+    transition: none;
+    box-shadow: none;
+}
+
+#workspaces button.focused {
+    background-color: transparent;
+}
+
+#workspaces button.urgent {
+    color: #e0635e;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+    color: #85c1dc;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 10px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+   color: #f7a1e0;
+}
+
+#battery {
+    color: #a6d189;
+}
+
+#battery.critical:not(.charging) {
+    color: #e0635e;
+}
+
+#cpu {
+    color: #81c8be;
+}
+
+#memory {
+    background-color: #9b59b6;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    color: #9394db;
+}
+
+#network.disconnected {
+    color: #e0635e;
+}
+
+#pulseaudio {
+    color: #ef9f76;
+}
+
+#pulseaudio.muted {
+    color: #555555;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#temperature {
+    background-color: #f0932b;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#custom-power {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #e5c890;
+}

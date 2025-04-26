@@ -1,0 +1,8 @@
+;; key remapping
+(defcfg
+  linux-dev /dev/input/event0
+)
+(defsrc caps)
+(deflayer base
+  lctl
+)

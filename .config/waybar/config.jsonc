@@ -1,0 +1,81 @@
+// -*- mode: jsonc -*-
+{
+    "height": 30, 
+    "spacing": 10, // Gaps between modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "pulseaudio"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "cpu",
+        "battery",
+        "custom/power"
+    ],
+   "hyprland/workspaces" : {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",        
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "●",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }       
+    },
+   "clock": {
+        "tooltip": false,
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ⚡",
+        "format-plugged": "{capacity}% ⚡",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+   "network": {
+        "format-disconnected": "",
+        "format-wifi": "{essid} ",
+        "tooltip-format": "{ipaddr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{volume}%",
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+        "on-click": "wlogout"
+    }
+}
